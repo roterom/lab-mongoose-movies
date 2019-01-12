@@ -5,15 +5,17 @@ const schema = new mongoose.Schema({
     type: String,
     required: true
   },
-  ocupation {
+  occupation: {
     type: String,
     default: "unkonwn"
   },
-  catchPhrase {
+  catchPhrase: {
     type: String,
     required: true
+  }
 }, {
   timestamps: true
+  
 });
 
 module.exports = mongoose.model('Celebrity', schema);

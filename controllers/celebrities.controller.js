@@ -6,21 +6,21 @@ module.exports.list = (req, res, next) => {
     .catch(err => next(err))
 }
 
-// module.exports.create = (req, res, next) => {
-//   res.render('users/create');
-// }
+module.exports.create = (req, res, next) => {
+  res.render('celebrities/new');
+}
 
-// module.exports.doCreate = (req, res, next) => {
-//   const user = new User(req.body);
+module.exports.doCreate = (req, res, next) => {
+  const celebrity = new Celebrity(req.body);
 
-//   user.save()
-//     .then((user) => { res.redirect('/users' )});
-// }
+  celebrity.save()
+    .then((celebrity) => { res.redirect('/celebrities' )});
+}
 
-// module.exports.get = (req, res, next) => {
-//   User.findById(req.params.id)
-//     .then(user => res.render('users/detail', { user }));
-// }
+module.exports.get = (req, res, next) => {
+  Celebrity.findById(req.params.id)
+    .then(celebrity => res.render('celebrities/show', { celebrity }));
+}
 
 // module.exports.delete = (req, res, next) => {
 //   User.findByIdAndDelete(req.params.id)
