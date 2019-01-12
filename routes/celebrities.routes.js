@@ -9,7 +9,9 @@ router.get('/new', celebritiesController.create)
 router.post('/new', celebritiesController.doCreate)
 
 router.get('/:id', celebritiesController.get)
-// router.post('/:id/delete', usersController.delete) 
+router.post('/:id/delete', celebritiesController.delete) 
 
+router.get('/:id/edit', celebritiesController.edit) 
+router.post('/:id', celebritiesController.doEdit) 
 
 module.exports = router;

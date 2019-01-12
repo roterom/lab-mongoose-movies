@@ -2,7 +2,7 @@ const Celebrity = require('../models/celebrity.model');
 
 module.exports.list = (req, res, next) => {
   Celebrity.find()
-    .then((celebrities) => res.render('celebrities/list', { celebrity }))
+    .then((celebrities) => res.render('celebrities/index', { celebrities }))
     .catch(err => next(err))
 }
 
@@ -19,10 +19,11 @@ module.exports.doCreate = (req, res, next) => {
 
 module.exports.get = (req, res, next) => {
   Celebrity.findById(req.params.id)
-    .then(celebrity => res.render('celebrities/show', { celebrity }));
+  // .then(celebrity => res.send( { celebrity }));
+  .then(celebrity => res.render('celebrities/show', { celebrity }));
 }
 
-// module.exports.delete = (req, res, next) => {
-//   User.findByIdAndDelete(req.params.id)
-//     .then(user => res.redirect('/users'));
-// }
+module.exports.delete = (req, res, next) => {
+  Celebrity.findByIdAndDelete(req.params.id)
+    .then(celebrity => res.redirect('/index'));
+}
