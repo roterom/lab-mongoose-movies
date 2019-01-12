@@ -3,7 +3,7 @@ const path = require('path');
 const logger = require('morgan');
 const hbs = require('hbs');
 const bodyParser = require('body-parser');
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 3030;
 const celebritiesRoutes = require('./routes/celebrities.routes');
 
 const app = express();

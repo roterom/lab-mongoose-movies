@@ -7,7 +7,7 @@ module.exports.list = (req, res, next) => {
 }
 
 module.exports.create = (req, res, next) => {
-  res.render('celebrities/new');
+  res.render('celebrities/new', {celebrity: new Celebrity()});
 }
 
 module.exports.doCreate = (req, res, next) => {
@@ -26,4 +26,23 @@ module.exports.get = (req, res, next) => {
 module.exports.delete = (req, res, next) => {
   Celebrity.findByIdAndDelete(req.params.id)
     .then(celebrity => res.redirect('/index'));
+}
+
+module.exports.edit = (req, res, next) => {
+  /* Promise.all([
+    Celebrity.find(),
+    Book.findById(req.params.id)
+  ]) */
+  Celebrity.find(req.params.id)
+  .then(celebrity => res.render('celebrities/new', { celebrity }));
+}
+
+module.exports.doEdit = (req, res, next) => {
+  Celebrity.findById(req.params.id)
+    .then((celebrity) => {
+      celebrity.set(req.body);
+
+      celebrity.save()
+        .then((celebrity) => { res.redirect('/index' )});
+    })
 }
