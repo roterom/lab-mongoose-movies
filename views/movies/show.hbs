@@ -1,0 +1,26 @@
+
+<div class="container">
+    <div class="row"></div>
+    <h2 class="py-5">MOVIE DETAILS</h2>
+</div>
+
+<div class="container">
+  <div class="row my-3">
+    <label class="col-2">Title: </label>
+    <span class="col-10">{{ movie.title }}</span></div>
+
+  <div class="row my-3">
+    <label class="col-2">Genre: </label>
+    <span class="col-10">{{ movie.genre }}</span>
+  </div>
+  <div class="row my-3">
+    <label class="col-2">Plot: </label>
+    <span class="col-10">{{ movie.plot }}</span>
+  </div>
+  <div class="row my-3">
+    <label class="col-2">Celebrity: </label>
+    <a href="/celebrities/{{ celebrity.id }}" class="col-10">{{ celebrity.name }}</a>
+  </div>
+  <a class="row my-5" href="/movies">Come back to movies list</a>
+</div>
+

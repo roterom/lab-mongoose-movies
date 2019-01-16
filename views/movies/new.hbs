@@ -1,0 +1,30 @@
+<div class="container">
+    <div class="row"></div>
+    <h2 class="py-5">New Movie</h2>
+</div>
+<div class="container">
+<form action="/movies/new" method="post">
+    <div class="form-group my-4">
+        <label for="title">Title</label>
+        <input type="text" class="form-control"  name="title" id="title" placeholder="Enter title">
+    </div>
+    <div class="form-group my-4">
+        <label for="genre">Genre</label>
+        <input type="text" class="form-control" name="genre" id="genre" placeholder="Enter genre">
+    </div>
+    <div class="form-group my-4">
+        <label for="plot">Plot</label>
+        <textarea class="form-control" name="plot" rows=3 placeholder="Enter plot"></textarea>
+    </div>
+    <div class="form-group my-4">
+        <label for="author">Celebrity</label>
+        <select class="form-control" name="celebrity">
+            <option value="" selected disabled>Please select</option>
+            {{#each celebrities as |celebrity|}}
+                <option value="{{ celebrity.id }}">{{ celebrity.name }}</option>
+            {{/each}}
+        </select>
+    </div>
+    <button type="submit" class="btn btn-primary my-3">Create</button>
+    </form>
+</div>

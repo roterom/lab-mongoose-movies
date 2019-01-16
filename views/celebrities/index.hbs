@@ -1,12 +1,19 @@
-<h2>CELEBRITIES</h2>
-<ul
-  {{#each celebrities as |celebrity| }}
-    <li><a href="/celebrities/{{ celebrity.id }}">{{ celebrity.name }}</a></li>
-    <form action="/celebrities/{{celebrity.id}}/delete" method=POST>
-      <button class="btn btn-warning" type="submit">Delete</button>
-    </form>
+<div class="container">
+  <div class="row"></div>
+  <h2 class="py-5">CELEBRITIES LIST</h2>
+</div>
+
+<div class="container">
+  {{#each celebrities as |celebrity|}}
+    <div class="row my-3">
+      <h4 class="col-3"><a href="/celebrities/{{ celebrity.id }}">{{ celebrity.name }}</a></h4>
+      <a href="/celebrities/{{ celebrity.id }}/edit" class="col-2 btn btn-info">Edit</a>
+      <form class="col-2" action="/celebrities/{{ celebrity.id }}/delete" method="POST">
+        <button class="btn btn-danger" type="submit">Delete</button>
+      </form>
+    </div>
   {{/each}}
 
 
-</ul>
-<a href="/celebrities/new" class="btn btn-primary">New Celebrity</a>
+  <a href="/celebrities/new" class="btn btn-primary my-5">New Celebrity</a>
+</div>

@@ -1,0 +1,21 @@
+<div class="container">
+    <div class="row"></div>
+    <h2 class="py-5">Edit Celebrity</h2>
+</div>
+<div class="container">
+<form action="/celebrities/{{ celebrity.id }}/edit" method="post">
+    <div class="form-group my-4">
+        <label for="celebrity-name">Name</label>
+        <input type="text" class="form-control" name="name" value="{{ celebrity.name }}" id="celebrity-name" placeholder="Enter name">
+    </div>
+    <div class="form-group my-4">
+        <label for="ocuppation">Ocuppation</label>
+        <input type="text" class="form-control" name="occupation" value="{{ celebrity.occupation }}" id="occupation" placeholder="Enter occupation">
+    </div>
+    <div class="form-group my-4">
+        <label for="catch-phrase">Catch Phrase</label>
+        <input type="text" class="form-control" name="catchPhrase" value="{{ celebrity.catchPhrase }}" id="catch-phrase" placeholder="Enter catch phrase">
+    </div>
+    <button type="submit" class="btn btn-primary my-3">Save</button>
+    </form>
+</div>

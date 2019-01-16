@@ -1,23 +1,21 @@
-<h2>New Celebrity</h2>
-
-{{#if celebrity.isNew }}
-  <form action="/celebrities/new" method="post">
-{{else}}
-  <form action="/celebrities/{{celebrity.id}}" method="post">
-{{/if}}
-
-    <div>
-        <label >Name:</label>
-        <input type="text" name="name">
+<div class="container">
+    <div class="row"></div>
+    <h2 class="py-5">New Celebrity</h2>
+</div>
+<div class="container">
+<form action="/celebrities/new" method="post">
+    <div class="form-group my-4">
+        <label for="celebrity-name">Name</label>
+        <input type="text" class="form-control"  name="name" id="celebrity-name" placeholder="Enter name">
     </div>
-   <div>
-        <label >Occupation:</label>
-        <input type="text" name="occupation">
+    <div class="form-group my-4">
+        <label for="ocuppation">Ocuppation</label>
+        <input type="text" class="form-control" name="occupation" id="occupation" placeholder="Enter occupation">
     </div>
-    <div>
-        <label >Catch Phrase:</label>
-        <input type="text" name="catchPhrase">
+    <div class="form-group my-4">
+        <label for="catch-phrase">Catch Phrase</label>
+        <input type="text" class="form-control" name="catchPhrase" id="catch-phrase" placeholder="Enter catch phrase">
     </div>
-    <button type="submit" class="btn btn-primary">Add</button>
-
-</form>
+    <button type="submit" class="btn btn-primary my-3">Create</button>
+    </form>
+</div>

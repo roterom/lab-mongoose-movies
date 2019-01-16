@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="row"></div>
+  <h2 class="py-5">MOVIES LIST</h2>
+</div>
+
+<div class="container">
+  {{#each movies as |movie|}}
+    <div class="row my-3">
+      <h4 class="col-3"><a href="/movies/{{ movie.id }}">{{ movie.title }}</a></h4>
+      <a href="/movies/{{ movie.id }}/edit" class="col-2 btn btn-info">Edit</a>
+      <form class="col-2" action="/movies/{{ movie.id }}/delete" method="POST">
+        <button class="btn btn-danger" type="submit">Delete</button>
+      </form>
+    </div>
+  {{/each}}
+
+
+  <a href="/movies/new" class="btn btn-primary my-5">New Movie</a>
+</div>

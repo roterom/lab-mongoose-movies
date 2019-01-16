@@ -12,37 +12,30 @@ module.exports.create = (req, res, next) => {
 
 module.exports.doCreate = (req, res, next) => {
   const celebrity = new Celebrity(req.body);
-
   celebrity.save()
     .then((celebrity) => { res.redirect('/celebrities' )});
 }
 
 module.exports.get = (req, res, next) => {
   Celebrity.findById(req.params.id)
-  // .then(celebrity => res.send( { celebrity }));
-  .then(celebrity => res.render('celebrities/show', { celebrity }));
+    .then(celebrity => res.render('celebrities/show', { celebrity }));
 }
 
 module.exports.delete = (req, res, next) => {
   Celebrity.findByIdAndDelete(req.params.id)
-    .then(celebrity => res.redirect('/index'));
+    .then(celebrity => res.redirect('/celebrities'));
 }
 
 module.exports.edit = (req, res, next) => {
-  /* Promise.all([
-    Celebrity.find(),
-    Book.findById(req.params.id)
-  ]) */
-  Celebrity.find(req.params.id)
-  .then(celebrity => res.render('celebrities/new', { celebrity }));
+  Celebrity.findById(req.params.id)
+    .then(celebrity => res.render('celebrities/edit', { celebrity }));
 }
 
 module.exports.doEdit = (req, res, next) => {
   Celebrity.findById(req.params.id)
     .then((celebrity) => {
       celebrity.set(req.body);
-
       celebrity.save()
-        .then((celebrity) => { res.redirect('/index' )});
+        .then((celebrity) => { res.redirect('/celebrities' )});
     })
 }
