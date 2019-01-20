@@ -1,7 +1,10 @@
-<div class="container">
-    <div class="row"></div>
-    <h2 class="py-5">New Celebrity</h2>
+<div class="container-fluid pt-5">
+  <div class="m-5"></div>
+  <div class="row">
+    <h2 class="m-3">NEW CELEBRITY</h2>
+  </div>
 </div>
+
 <div class="container">
 <form action="/celebrities/new" method="post">
     <div class="form-group my-4">
@@ -15,6 +18,10 @@
     <div class="form-group my-4">
         <label for="catch-phrase">Catch Phrase</label>
         <input type="text" class="form-control" name="catchPhrase" id="catch-phrase" placeholder="Enter catch phrase">
+    </div>
+    <div class="form-group my-4">
+        <label for="photo">Photo</label>
+        <input type="text" class="form-control" name="photo" id="photo" placeholder="">
     </div>
     <button type="submit" class="btn btn-primary my-3">Create</button>
     </form>

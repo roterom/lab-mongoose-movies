@@ -1,19 +1,28 @@
-<div class="container">
-  <div class="row"></div>
-  <h2 class="py-5">CELEBRITIES LIST</h2>
+<div class="container-fluid pt-5">
+  <div class="m-5"></div>
+  <div class="row">
+    <h2 class="m-3">CELEBRITIES LIST</h2>
+  </div>
 </div>
 
-<div class="container">
-  {{#each celebrities as |celebrity|}}
-    <div class="row my-3">
-      <h4 class="col-3"><a href="/celebrities/{{ celebrity.id }}">{{ celebrity.name }}</a></h4>
-      <a href="/celebrities/{{ celebrity.id }}/edit" class="col-2 btn btn-info">Edit</a>
-      <form class="col-2" action="/celebrities/{{ celebrity.id }}/delete" method="POST">
-        <button class="btn btn-danger" type="submit">Delete</button>
-      </form>
-    </div>
-  {{/each}}
-
-
-  <a href="/celebrities/new" class="btn btn-primary my-5">New Celebrity</a>
+<div class="row">
+  <div class="col-12 text-center">
+    <a href="/celebrities/new" class="btn btn-primary col-4 mb-5 p-3 .offset-4 w-100 mx-auto">ADD CELEBRITY</a>
+  </div>
+  <div class="col-12 card-group justify-content-center">
+    {{#each celebrities as |celebrity|}}
+      <div class="card-deck text-center m-4 col-sm-2 shadow align-content-center">
+          <img src="{{ celebrity.photo }}" class="card-img-top h-50" alt=" {{ celebrity.name }} photo">
+        <div class="card-body">
+          <h4 class="card-title"><a href="/celebrities/{{ celebrity.id }}">{{ celebrity.name }}</a></h4>
+          <div class="row justify-content-around">
+            <a href="/celebrities/{{ celebrity.id }}/edit" class="btn btn-info col-4 .offset-1">Edit</a>
+              <form action="/celebrities/{{ celebrity.id }}/delete" method="POST" class="col-4 .offset-1 p-0">
+                <button class="btn btn-danger w-100" type="submit">Delete</button>
+              </form>
+          </div>
+        </div>
+      </div>
+    {{/each}}
+  </div>
 </div>

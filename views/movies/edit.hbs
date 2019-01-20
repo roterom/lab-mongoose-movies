@@ -1,7 +1,10 @@
-<div class="container">
-    <div class="row"></div>
-    <h2 class="py-5">Edit movie</h2>
+<div class="container-fluid pt-5">
+  <div class="m-5"></div>
+  <div class="row">
+    <h2 class="m-3">EDIT MOVIE</h2>
+  </div>
 </div>
+
 <div class="container">
 <form action="/movies/{{ movie.id }}/edit" method="post">
     <div class="form-group my-4">
@@ -17,13 +20,17 @@
         <textarea class="form-control" name="plot" rows=3>{{ movie.plot }}</textarea>
     </div>
     <div class="form-group my-4">
-        <label for="author">Celebrity</label>
+        <label for="celebrity">Star</label>
         <select class="form-control" name="celebrity">
             <option value="{{ movie.celebrity.name }}" selected disabled>{{ movie.celebrity.name }}</option>
             {{#each celebrities as |celebrity|}}
                 <option value="{{ celebrity.id }}">{{celebrity.name}}</option>
             {{/each}}
         </select>
+    </div>
+     <div class="form-group my-4">
+        <label for="cover">Cover</label>
+        <input type="text" class="form-control" name="cover" id="cover" placeholder="" value="{{ movie.cover }}">
     </div>
     <button type="submit" class="btn btn-primary my-3">Save</button>
     </form>

@@ -23,5 +23,7 @@ app.use(express.static(__dirname + '/public'));
 app.use('/celebrities', celebritiesRoutes);
 app.use('/movies', moviesRoutes);
 
+app.get('/', (req, res, next) =>
+res.render("home"));
 
 app.listen(PORT, () => console.info(`App listen at ${PORT} port`));

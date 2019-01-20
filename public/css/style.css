@@ -1,3 +1,37 @@
 body {
-  background-color: aqua;
+  overflow-x: hidden;
+}
+
+#home {
+  background-image: url(../images/home.jpg);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  height: 100vh
+}
+
+#home a {
+  font-size: 2rem;
+  font-weight: bold;
+  box-shadow: inset 0 0 1em #000;
+}
+
+nav {
+  position: fixed;
+  width: 100%;
+  color: #fff;
+  font-size: 1.5rem;
+  background-color: #007a96;
+  box-shadow: 0 5px 6px 0px rgb(49, 49, 49);
+  z-index: 2000;
+
+}
+
+.details label {
+  font-weight: bold;
+  font-size: 1.7rem;
+  margin: 0;
+}
+
+.details span {
+  font-size: 1.5rem;
 }
