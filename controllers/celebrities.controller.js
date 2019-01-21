@@ -7,7 +7,7 @@ module.exports.list = (req, res, next) => {
 }
 
 module.exports.create = (req, res, next) => {
-  res.render('celebrities/new', {celebrity: new Celebrity()});
+  res.render('celebrities/new');
 }
 
 module.exports.doCreate = (req, res, next) => {
